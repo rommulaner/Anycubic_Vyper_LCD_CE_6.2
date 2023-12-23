@@ -13,7 +13,7 @@ $BuildTmpDir = "build\tmp"
 $ProjectFolder = "src/DWIN"
 $FirmwareFolderName = "DWIN_SET"
 
-$OutputPath = "$BuildDir/CR-6-touchscreen-$(Get-Date -Format "yyyy-MM-dd").zip"
+$OutputPath = "$BuildDir/Vyper-CE-6.2-Touchscreen-$(Get-Date -Format "yyyy-MM-dd").zip"
 
 # ... ZIP inputs
 $ReadMeFilePath = "src/README.md"
@@ -51,7 +51,7 @@ Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "13*.bin" | Rename-Item -NewNa
 Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "14*.bin" | Rename-Item -NewName "14_Variables.bin"
 
 # ... Move kernel upgrades into their own folder-on-sd-card
-$KernelUpgradePath = Join-Path -Path $BuildTmpDir -ChildPath "CR-6 kernel upgrade"
+$KernelUpgradePath = Join-Path -Path $BuildTmpDir -ChildPath "Vyper-CE-6.2-Kernel"
 New-Item $KernelUpgradePath -ItemType Directory | Out-Null
 Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "T5L_*.bin" | Move-Item -Destination $KernelUpgradePath
 

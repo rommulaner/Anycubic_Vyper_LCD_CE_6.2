@@ -123,13 +123,13 @@ foreach ($DwinFile in $DwinFiles) {
 
 function Write-Label([string]$Label, [switch]$HasError) {
     $Color = if ($HasError) { [ConsoleColor]::Red } else { [ConsoleColor]::Black }
-    Write-Host $Label.PadRight($FilenameSpacing) -NoNewLine -BackgroundColor $Color  -ForegroundColor White
+    
+	Write-Host $Label.PadRight($FilenameSpacing) -NoNewLine -BackgroundColor $Color  -ForegroundColor White
 }
 
 function Write-Sector([Switch]$HasError, [Switch]$Empty) {
-    $Char = if ($Empty -eq $false) { '█' } else { '░' }
+    $Char = if ($Empty -eq $false) { 'X' } else { '_' }
     $Color = if ($Empty -eq $true) { [ConsoleColor]::Gray } elseif ($HasError -eq $false) { [ConsoleColor]::Cyan } else { [ConsoleColor]::Red }
-
     Write-Host $Char -NoNewline -ForegroundColor $Color -BackgroundColor Black
 }
 

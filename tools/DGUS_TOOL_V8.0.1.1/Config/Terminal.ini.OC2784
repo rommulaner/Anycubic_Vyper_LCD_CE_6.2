@@ -1,0 +1,103 @@
+[Command]
+C0=AA 55 32
+C1=DD EA AA
+C2=AA 70 00 CC 33 C3 3C
+C3=
+C4=
+C5=
+C6=
+C7=
+C8=
+C9=
+
+[Resolution]
+N=11
+R0=320X240
+R1=480X272
+R2=272X480
+R3=640X480
+R4=800X480
+R5=800X600
+R6=1024X600
+R7=1024X768
+R8=480X640
+R9=480X800
+R10=600X1024
+
+[init]
+currsize=1
+currpixel=1
+Rkey=True
+
+[DGUSOption]
+DATAAUTO=0
+COLOR=57343
+FONTID=0
+FONTSIZE=255
+ICONDISPLAY=0
+VARCOUNT=64
+GriddingColor=63488
+Xoffset=0
+Yoffset=0
+GriddingSize=10
+DisplayGrid=False
+
+[DOWNLOAD]
+CurrCom=COM1
+CurrBaudRate=3
+PackHead=5A
+PackEnd=A5
+
+[VERSION]
+version=2
+
+[EditionIniDis]
+str0=0
+str1=1
+str2=1
+str3=1
+str4=1
+str5=1
+str6=1
+str7=1
+str8=1
+str9=1
+str10=1
+str11=1
+str12=1
+str13=1
+str14=1
+str15=1
+str16=1
+str17=1
+str18=1
+str19=1
+str20=1
+str21=1
+
+[EditionIniTou]
+str0=1
+str1=1
+str2=1
+str3=1
+str4=1
+str5=1
+str6=1
+str7=1
+str8=1
+str9=1
+str10=1
+str11=1
+str12=1
+str13=1
+
+[TFTPRJ]
+Prj1=C:/Documents and Settings/hp/桌面/新建文件夹/Project.dgus
+Prj2=C:/Documents and Settings/hp/桌面/刘积斌854X480/Project.dgus
+Prj3=C:/Documents and Settings/hp/桌面/高彤工程_test/Project.dgus
+Prj4=C:/Documents and Settings/hp/桌面/机型1/test.dgus
+Prj5=C:/Documents and Settings/hp/桌面/机型1/Project.dgus
+Prj6=C:/Documents and Settings/hp/桌面/机型2/test.dgus
+Prj7=C:/Documents and Settings/hp/桌面/机型2/Project.dgus
+Prj8=C:/Documents and Settings/hp/桌面/新建文件夹 (3)/Project.dgus
+Prj9=F:/马诚-南京城善/T5升级/T5屏幕工程/工程 - 机型1-t5/test.dgus
