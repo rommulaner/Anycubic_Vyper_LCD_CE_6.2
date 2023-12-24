@@ -40,7 +40,7 @@ Good luck, and if you maintain your own translated firmware, please let us know!
 
 ## Documentation for development
 
-You need the [DGUS v8.0.x software](http://dwin.com.cn/home/Index/download_file?download_id=4796) for editing the touch screen.
+You need the [DGUS v8.0.x software] (included in tool folder) for editing the touch screen.
 
 You can open the .dgus project file in the [`src\DWIN`](src\DWIN) folder:
 
@@ -112,17 +112,17 @@ In the currently - cleaned up - source code of the touch screen handling in Marl
 
 For buttons:
 
-- Virtual Pointers for buttons are defined in `extui/lib/dgus_creality/DGUSDisplayDef.h`
-- In `extui/lib/dgus_creality/DGUSDisplayDef.cpp` in the `ListOfVP` the Virtual Pointer are connected to a callback handler
+- Virtual Pointers for buttons are defined in `src/lcd/extui/dgus_creality/creality_touch/DGUSDisplayDef.h`
+- In `src/lcd/extui/dgus_creality/creality_touch/DGUSDisplayDef.cpp` in the `ListOfVP` the Virtual Pointer are connected to a callback handler
 - Because the Creality display used the same VP all over the place, sometimes in completely different functions or values (and this is quite some work to clean up!), these "legacy" VPs are delegated to `DGUSCrealityDisplay_HandleReturnKeyEvent`
-- For legacy VPs handlers are defined per page in `extui/lib/dgus_creality/PageHandlers.cpp`
+- For legacy VPs handlers are defined per page in `src/lcd/extui/dgus_creality/creality_touch/PageHandlers.cpp`
     - The "Key Data" is used to distinguish between the actual key pressed and passed to these functions as `buttonValue`
 
 For dynamic updatable values:
 
 - Dynamic updatable values are Virtual Pointers with a value that is pushed from the display when it is changed, and pushed to the display during the Marlin `idle` loop
-- The Virtual Pointers are defined in `extui/lib/dgus_creality/DGUSDisplayDef.h`
-- Per dynamically updated virtual pointer there is in `extui/lib/dgus_creality/DGUSDisplayDef.cpp`:
+- The Virtual Pointers are defined in `src/lcd/extui/dgus_creality/creality_touch/DGUSDisplayDef.h`
+- Per dynamically updated virtual pointer there is in `src/lcd/extui/dgus_creality/creality_touch/DGUSDisplayDef.cpp`:
     - A registration in `ListOfVP`, with:
         - The VP ID
         - A pointer to the memory location to read the value from in Marlin (can be `nullptr`)
@@ -143,7 +143,7 @@ The touch screen configuration file "T5LCFG_272480.CFG" has its specification de
 
 Font's are currently configured like below:
 
-![Font Settings](doc/font-settings.png)
+![Font Settings](doc/font-settings_Vyper-CE-6.2_B612_Mono_CR6.png)
 
 In the same folder where you have the DWIN tool unpacked a `0_DWIN_ASC.HZK` file is placed. You need to copy that to the DWIN_SET folder, and can flash it directly.
 The kerning of the current font is not ideal (especially using numbers that are small, like "1"), so perhaps we should look for a replacement.
@@ -158,6 +158,6 @@ In addition, [this is a nice resource](https://github.com/rubienr/MarlinDgusReso
 
 [The core CR-6 Community firmware dev team](https://github.com/CR6Community/Marlin#credits)
 
-Icons from [Font Awesome](https://fontawesome.com/) and [Remix Icon](https://remixicon.com/).
+Icons from [Font Awesome](https://fontawesome.com/), [Remix Icon](https://remixicon.com/) and Anycubic Press Media.
 
-Font from [Google Fonts](https://fonts.google.com/specimen/B612) and customized with [FontForge](https://fontforge.org/).
+Font from [Google Fonts](https://fonts.google.com/specimen/B612) and customized with [FontForge](https://fontforge.org/) -> B612 Mono-CR6
