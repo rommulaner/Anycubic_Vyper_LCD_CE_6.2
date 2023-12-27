@@ -51,9 +51,9 @@ Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "13*.bin" | Rename-Item -NewNa
 Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "14*.bin" | Rename-Item -NewName "14_Variables.bin"
 
 # ... Move kernel upgrades into their own folder-on-sd-card
-$KernelUpgradePath = Join-Path -Path $BuildTmpDir -ChildPath "Vyper-CE-6.2-Kernel"
-New-Item $KernelUpgradePath -ItemType Directory | Out-Null
-Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "T5L_*.bin" | Move-Item -Destination $KernelUpgradePath
+#$KernelUpgradePath = Join-Path -Path $BuildTmpDir -ChildPath "Vyper-CE-6.2-Kernel"
+#New-Item $KernelUpgradePath -ItemType Directory | Out-Null
+#Get-ChildItem -Path $BuildTmpDir -Recurse -Filter "T5L_*.bin" | Move-Item -Destination $KernelUpgradePath
 
 # Check sector allocation
 Write-Host "Checking sector allocation..." -ForegroundColor Cyan
@@ -75,7 +75,7 @@ Write-Host "Zipping..." -ForegroundColor Cyan
 [array] $ZipContents = $ZipInputs | Get-Item
 $DWINFolder = Get-Item -Path "$BuildTmpDir/$FirmwareFolderName"
 $ZipContents += $DWINFolder
-$ZipContents += $(Get-Item -Path $KernelUpgradePath)
+#$ZipContents += $(Get-Item -Path $KernelUpgradePath)
 $ZipContents | Compress-Archive -DestinationPath $OutputPath -CompressionLevel Optimal -Verbose
 }
 
