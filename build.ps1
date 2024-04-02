@@ -13,7 +13,7 @@ $BuildTmpDir = "build\tmp"
 $ProjectFolder = "src/DWIN"
 $FirmwareFolderName = "DWIN_SET"
 
-$OutputPath = "$BuildDir/Vyper-CE-6.2.1-Touchscreen-$(Get-Date -Format "yyyy-MM-dd").zip"
+$OutputPath = "$BuildDir/Vyper-CE-6.2.2-Touchscreen-$(Get-Date -Format "yyyy-MM-dd").zip"
 
 # ... ZIP inputs
 $ReadMeFilePath = "src/README.md"
